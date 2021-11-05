@@ -36,11 +36,6 @@ public class RouterController {
         return "error";
     }
 
-    @GetMapping("/ano")
-    public String ano(){
-        return "RES";
-    }
-
     @ApiOperation("注册用户")
     @PostMapping("/register")
     @ResponseBody
@@ -55,5 +50,10 @@ public class RouterController {
     @PostMapping("/toMain")
     public String toMain() {
         return "main";
+    }
+
+    @GetMapping("/toHide")
+    public String toHide() {
+        return "hide";
     }
 }
