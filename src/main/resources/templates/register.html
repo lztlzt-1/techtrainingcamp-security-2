@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=drive-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="css/regist.css">
+  <!-- font-awesome 图标字体 http://www.fontawesome.com.cn/faicons/#web-application -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="screen"
+    rel="stylesheet" type="text/css" th:href="@{css/regist.css}">
+  <title>Register</title>
+</head>
+
+<body>
+  <div id="login-box">
+    <h1>Regist</h1>
+    <div class="form">
+      <form id="myForm" action="/register" method="post" class="form">
+        <span class="prompt">请输入用户名</span>
+        <div class="item">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          <label>
+            <input id="name" name="username" type="text" placeholder="Username" />
+          </label>
+        </div>
+        <span class="prompt">请输入密码</span>
+        <div class="item">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <label>
+            <input id="pass1" name="password" type="password" placeholder="Password">
+          </label>
+        </div>
+        <span class="prompt">请再次输入密码</span>
+        <div class="item">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <label>
+            <input id="pass2" type="password" placeholder="Password">
+          </label>
+        </div>
+
+        <span class="prompt">请输入手机号码</span>
+        <div class="item">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <label>
+            <input id="phone" type="text" placeholder="手机号码">
+          </label>
+        </div>
+
+        <input type="submit" id="regist-button" class="regist-button" value="注册" \>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("myForm").onsubmit = function () {
+      const name = document.getElementById("name").value;
+      const pass1 = document.getElementById("pass1").value;
+      const pass2 = document.getElementById("pass2").value;
+      if(!name) {
+        alert("用户名为空");
+        return false;
+      }
+      if (pass1 === pass2) {
+        if (pass1 && pass2) {
+          return true;
+        }
+        alert("密码为空");
+      } else {
+        alert("两次输入的密码不一致");
+      }
+      document.getElementById("pass1").value = '';
+      document.getElementById("pass2").value = '';
+      return false;
+    }
+  </script>
+</body>
+
+</html>
