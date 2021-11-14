@@ -7,8 +7,7 @@ package com.example.demo.pojo;
  * @create: 2021-09-02 17:23
  **/
 
-public class Constants
-{
+public class Constants {
     /**
      * UTF-8 字符集
      */
@@ -55,9 +54,14 @@ public class Constants
     public static final String LOGIN_FAIL = "Error";
 
     /**
-     * 验证码 redis key
+     * 图片验证码 redis key
      */
-    public static final String CAPTCHA_CODE_KEY = "captcha_codes:";
+    public static final String CAPTCHA_CODE_KEY = "captcha_code:";
+
+    /**
+     * 手机验证码 redis key
+     */
+    public static final String CAPTCHA_PHONE_KEY = "captcha_phone_code:";
 
     /**
      * 登录用户 redis key
@@ -133,4 +137,34 @@ public class Constants
      * RMI 远程方法调用
      */
     public static final String LOOKUP_RMI = "rmi://";
+
+    /**
+     * ip访问次数前缀
+     */
+    public static final String VISIT_PREFIX = "visit-";
+
+    /**
+     * 违法次数前缀
+     */
+    public static final String INFRACTION_PREFIX = "infraction-";
+
+    /**
+     * ip临时黑名单
+     */
+    public static final String TEMPORARY_ZSET = "temporary_forbidden_set";
+
+    /**
+     * ip永久黑名单
+     */
+    public static final String BLACK_SET = "black_set";
+
+    /**
+     * 单个ip下注册的手机号
+     */
+    public static final String IP_PHONE_PREFIX = "ip_phone";
+
+    /**
+     * 是否需要验证码
+     */
+    public static final String CAPTCHA_FLAG = "captcha_flag";
 }
